@@ -15,6 +15,10 @@
         main { padding: 2em; max-width: 700px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         .calendar-embed { width: 100%; min-height: 600px; border: none; margin-top: 1em; }
         footer { background: #222; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+        th, td { padding: 0.75em; text-align: left; border: 1px solid #ddd; }
+        th { background: #f4f4f4; }
+        tr:hover { background: #f1f1f1; }
     </style>
 </head>
 <body>
@@ -30,9 +34,38 @@
     </header>
     <main>
         <h2>Event Calendar</h2>
-        <!-- Replace the src below with your Google Calendar embed link -->
-        <iframe class="calendar-embed" src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America/New_York"></iframe>
-        <p style="font-size:0.9em;color:#555;">Replace the iframe src with your own Google Calendar embed link for live events.</p>
+        <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; background:#fff;">
+            <thead>
+                <tr style="background:#eee;">
+                    <th>Week</th>
+                    <th>Date Range</th>
+                    <th>Workshop Topic</th>
+                    <th>Contest</th>
+                    <th style="min-width:120px;">Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Aug 18–24</td><td>🏁 <b>Welcome + Mock Contest 0 (Kickoff Practice)</b><br>Short intro + 90-min ICPC-style contest</td><td>📌 Light editorial after</td><td></td></tr>
+                <tr><td>2</td><td>Aug 25–31</td><td>Brute Force + Simulation + Contest Review</td><td></td><td></td></tr>
+                <tr><td>3</td><td>Sep 1–7</td><td>Arrays, Hash Maps, Sets</td><td></td><td></td></tr>
+                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 1</b></td><td></td><td></td></tr>
+                <tr><td>4</td><td>Sep 8–14</td><td>Binary Search + Sorting</td><td></td><td></td></tr>
+                <tr><td>5</td><td>Sep 15–21</td><td>Prefix Sums + Greedy</td><td></td><td></td></tr>
+                <tr><td>6</td><td>Sep 22–28</td><td>Graphs I (BFS/DFS)</td><td></td><td></td></tr>
+                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 2</b></td><td></td><td></td></tr>
+                <tr><td>7</td><td>Sep 29–Oct 5</td><td>Graphs II (Topo, Dijkstra, MST)</td><td></td><td></td></tr>
+                <tr><td>8</td><td>Oct 6–12</td><td>Bitmask + Backtracking</td><td></td><td></td></tr>
+                <tr><td>9</td><td>Oct 13–19</td><td>Dynamic Programming I</td><td></td><td></td></tr>
+                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 3</b></td><td></td><td></td></tr>
+                <tr><td>10</td><td>Oct 20–26</td><td>Dynamic Programming II</td><td></td><td></td></tr>
+                <tr><td>11</td><td>Oct 27–Nov 2</td><td>Contest Strategy + Codeforces Practice</td><td></td><td></td></tr>
+                <tr><td>12</td><td>Nov 3–9</td><td>Regionals Practice Set</td><td></td><td></td></tr>
+                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 4</b></td><td></td><td></td></tr>
+                <tr><td>13</td><td>Nov 10–16</td><td>Final Touch-Up / Wrap-Up</td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 UGA ICPC Club</p>
