@@ -6,8 +6,11 @@
     <title>Workshops | UGA ICPC Club</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; }
-        header { background: #800000; color: #fff; padding: 1.5em 0; text-align: center; }
-        nav a { color: #fff; margin: 0 1em; text-decoration: none; font-weight: bold; }
+        header { background: #800000; color: #fff; padding: 1.5em 0; text-align: left; display: flex; align-items: center; }
+        .logo { height: 48px; vertical-align: middle; margin-right: 1em; display: inline-block; }
+        h1 { display: inline-block; margin: 0; font-size: 2em; vertical-align: middle; font-style: italic; }
+        nav { display: inline-block; margin-left: 2em; vertical-align: middle; }
+        nav a { color: #fff; margin: 0 1em 0 0; text-decoration: none; font-weight: bold; display: inline-block; text-align: left; }
         nav a:hover { text-decoration: underline; }
         main { padding: 2em; max-width: 700px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         footer { background: #222; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; }
@@ -15,7 +18,7 @@
 </head>
 <body>
     <header>
-        <h1>UGA ICPC Club</h1>
+        <h1><img src="img/logo.png" alt="UGA ICPC Logo" class="logo">UGA ICPC Club</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="workshops.html">Workshops</a>
