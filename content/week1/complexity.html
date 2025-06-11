@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops | UGA ICPC Club</title>
+    <title>Week 1: Time Complexity | UGA ICPC Club</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; }
         header { background: #800000; color: #fff; padding: 1.5em 0; text-align: left; display: flex; align-items: center; }
@@ -13,34 +13,43 @@
         nav a { color: #fff; margin: 0 1em 0 0; text-decoration: none; font-weight: bold; display: inline-block; text-align: left; }
         nav a:hover { text-decoration: underline; }
         main { padding: 2em; max-width: 900px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
-        ul.workshop-list { list-style: none; padding: 0; }
-        ul.workshop-list li { margin: 1em 0; }
-        ul.workshop-list a { color: #800000; font-weight: bold; text-decoration: none; font-size: 1.2em; }
-        ul.workshop-list a:hover { text-decoration: underline; }
+        .md-content { font-size: 1.08em; }
+        .md-content code { background: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        .md-content pre code { display: block; padding: 1em; background: #f4f4f4; border-radius: 6px; overflow-x: auto; }
+        .md-content table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+        .md-content th, .md-content td { border: 1px solid #ccc; padding: 6px 10px; }
+        .md-content th { background: #eee; }
+        .md-content details { margin: 1em 0; }
+        .md-content summary { cursor: pointer; font-weight: bold; }
+        .md-content a { color: #800000; }
         footer { background: #222; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <h1><img src="https://acm-uga.github.io/resources/social_img/csip.png" alt="UGA ICPC Logo" class="logo">UGA ICPC Club</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="workshops.html">Workshops</a>
-            <a href="contests.html">Contests</a>
-            <a href="leaderboard.html">Leaderboard</a>
-            <a href="calendar.html">Calendar</a>
+            <a href="../../index.html">Home</a>
+            <a href="../../workshops.html">Workshops</a>
+            <a href="../../contests.html">Contests</a>
+            <a href="../../leaderboard.html">Leaderboard</a>
+            <a href="../../calendar.html">Calendar</a>
         </nav>
     </header>
     <main>
-        <h2>Workshops</h2>
-        <ul class="workshop-list">
-            <li><a href="content/week1/complexity.html">Week 1: Time Complexity</a></li>
-            <!-- Add more workshop links here as you add more markdown files -->
-        </ul>
-        <p style="color:#555; font-size:0.95em;">Click a workshop to view its notes and resources.</p>
+        <h2>Week 1: Time Complexity</h2>
+        <div id="md-content" class="md-content">Loading...</div>
     </main>
     <footer>
         <p>&copy; 2025 UGA ICPC Club</p>
     </footer>
+    <script>
+    fetch('complexity.md')
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('md-content').innerHTML = marked.parse(md);
+      });
+    </script>
 </body>
 </html>
