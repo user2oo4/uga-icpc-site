@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGA ICPC - Graphs & Traversal</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { max-width: 800px; margin: 0 auto; font-family: 'Segoe UI', Arial, sans-serif; background: #fafbfc; }
+        .navbar { display: flex; align-items: center; background: #fff; border-bottom: 1px solid #eee; padding: 0.5em 1em; }
+        .navbar img { height: 40px; margin-right: 1em; }
+        .navbar a { color: #222; text-decoration: none; margin-right: 1.5em; font-weight: 500; }
+        .navbar a.active { color: #b31b1b; }
+        .content { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; margin-top: 2em; }
+        @media (max-width: 600px) { .content { padding: 1em; } .navbar { flex-direction: column; align-items: flex-start; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="../img/logo.png" alt="UGA ICPC Logo">
+        <a href="../index.html">Home</a>
+        <a href="../workshops.html" class="active">Workshops</a>
+        <a href="../contests.html">Contests</a>
+        <a href="../leaderboard.html">Leaderboard</a>
+        <a href="../calendar.html">Calendar</a>
+    </nav>
+    <div class="content">
+        <h2>Week X: Graphs & Traversal</h2>
+        <div id="md-content">Loading...</div>
+    </div>
+    <script>
+        fetch('graph.md')
+            .then(res => res.text())
+            .then(md => {
+                document.getElementById('md-content').innerHTML = marked.parse(md);
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+            });
+    </script>
+</body>
+</html>
