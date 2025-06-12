@@ -197,8 +197,77 @@ int main() {
 
 ---
 
+### Problem: [Chessboard & Queens](https://cses.fi/problemset/task/1624)
+
+**Solution:**
+
+We can try placing a queen on each row (since each row must have exactly one queen). For each placement, we check if the new queen is on the same column or diagonal as any previously placed queen. If we successfully place all queens, we increment the answer.
+
+<details>
+<summary>C++ Code</summary>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n = 8, k = 0; // k stores the answer
+int a[10];
+char c[10][10];
+bool ok[10][10];
+
+bool check(int i, int j) {
+    // Check same column
+    for (int x = 1; x <= j - 1; x++) {
+        if (a[x] == i) return true;
+    }
+    // Check diagonal '/'
+    for (int x = 1; x <= j - 1; x++) {
+        if (a[x] - x == i - j) return true;
+    }
+    // Check diagonal '\'
+    for (int x = 1; x <= j - 1; x++) {
+        if (a[x] + x == i + j) return true;
+    }
+    return false;
+}
+
+void show() {
+    for (int i = 1; i <= n; i++) {
+        if (!ok[i][a[i]]) return;
+    }
+    k++;
+}
+
+void back(int pos) {
+    if (pos == n) {
+        show();
+        return;
+    }
+    for (int i = 1; i <= n; i++) {
+        if (!check(i, pos + 1)) {
+            a[pos + 1] = i;
+            back(pos + 1);
+        }
+    }
+}
+
+int main() {
+    n = 8;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cin >> c[i][j];
+            ok[i][j] = (c[i][j] == '.');
+        }
+    }
+    back(0);
+    cout << k << endl;
+}
+```
+</details>
+
+---
+
 ## Additional Practice
 
 - [VJudge Practice Contest](https://vjudge.net/contest/722587#overview)
-
 
