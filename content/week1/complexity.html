@@ -51,6 +51,9 @@
       .then(res => res.text())
       .then(md => {
         document.getElementById('md-content').innerHTML = marked.parse(md);
+        if (window.MathJax) {
+          MathJax.typesetPromise();
+        }
       });
     </script>
 </body>
