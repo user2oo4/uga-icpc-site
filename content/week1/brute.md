@@ -4,6 +4,14 @@ These problems are a great starting point for practicing careful attention to pr
 
 ---
 
+## Resources
+
+- [USACO Guide: Simulation](https://usaco.guide/bronze/simulation)
+- [USACO Guide: Introduction to Complete Search](https://usaco.guide/bronze/intro-complete)
+- [USACO Guide: Complete Search with Recursion](https://usaco.guide/bronze/complete-rec)
+
+---
+
 ## Simulation
 
 Simulation problems usually require you to mimic a process step by step. The goal is to translate the problem statement directly into code, using built-in data structures and language features. When a problem statement says to find the end result of a process, or to find when something occurs, a naive simulation is often sufficient.
