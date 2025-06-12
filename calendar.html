@@ -1,74 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar | UGA ICPC Club</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; }
-        header { background: #800000; color: #fff; padding: 1.5em 0; text-align: left; display: flex; align-items: center; }
-        .logo { height: 48px; vertical-align: middle; margin-right: 1em; display: inline-block; }
-        h1 { display: inline-block; margin: 0; font-size: 2em; vertical-align: middle; font-style: italic; }
-        nav { display: inline-block; margin-left: 2em; vertical-align: middle; }
-        nav a { color: #fff; margin: 0 1em 0 0; text-decoration: none; font-weight: bold; display: inline-block; text-align: left; }
-        nav a:hover { text-decoration: underline; }
-        main { padding: 2em; max-width: 700px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
-        .calendar-embed { width: 100%; min-height: 600px; border: none; margin-top: 1em; }
-        footer { background: #222; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-        th, td { padding: 0.75em; text-align: left; border: 1px solid #ddd; }
-        th { background: #f4f4f4; }
-        tr:hover { background: #f1f1f1; }
-    </style>
-</head>
-<body>
-    <header>
-        <h1><img src="https://acm-uga.github.io/resources/social_img/csip.png" alt="UGA ICPC Logo" class="logo">UGA ICPC Club</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="workshops.html">Workshops</a>
-            <a href="contests.html">Contests</a>
-            <a href="leaderboard.html">Leaderboard</a>
-            <a href="calendar.html">Calendar</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Event Calendar</h2>
-        <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; background:#fff;">
-            <thead>
-                <tr style="background:#eee;">
-                    <th>Week</th>
-                    <th>Date Range</th>
-                    <th>Workshop Topic</th>
-                    <th>Contest</th>
-                    <th style="min-width:120px;">Links</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>Aug 18–24</td><td>🏁 <b>Welcome + Mock Contest 0 (Kickoff Practice)</b><br>Short intro + 90-min ICPC-style contest</td><td>📌 Light editorial after</td><td><a href="content/week1/complexity.html">Time Complexity Notes</a></td></tr>
-                <tr><td>2</td><td>Aug 25–31</td><td>Brute Force + Simulation + Contest Review</td><td></td><td></td></tr>
-                <tr><td>3</td><td>Sep 1–7</td><td>Arrays, Hash Maps, Sets</td><td></td><td></td></tr>
-                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 1</b></td><td></td><td></td></tr>
-                <tr><td>4</td><td>Sep 8–14</td><td>Binary Search + Sorting</td><td></td><td></td></tr>
-                <tr><td>5</td><td>Sep 15–21</td><td>Prefix Sums + Greedy</td><td></td><td></td></tr>
-                <tr><td>6</td><td>Sep 22–28</td><td>Graphs I (BFS/DFS)</td><td></td><td></td></tr>
-                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 2</b></td><td></td><td></td></tr>
-                <tr><td>7</td><td>Sep 29–Oct 5</td><td>Graphs II (Topo, Dijkstra, MST)</td><td></td><td></td></tr>
-                <tr><td>8</td><td>Oct 6–12</td><td>Bitmask + Backtracking</td><td></td><td></td></tr>
-                <tr><td>9</td><td>Oct 13–19</td><td>Dynamic Programming I</td><td></td><td></td></tr>
-                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 3</b></td><td></td><td></td></tr>
-                <tr><td>10</td><td>Oct 20–26</td><td>Dynamic Programming II</td><td></td><td></td></tr>
-                <tr><td>11</td><td>Oct 27–Nov 2</td><td>Contest Strategy + Codeforces Practice</td><td></td><td></td></tr>
-                <tr><td>12</td><td>Nov 3–9</td><td>Regionals Practice Set</td><td></td><td></td></tr>
-                <tr><td></td><td>Weekend</td><td>🏁 <b>Mock Contest 4</b></td><td></td><td></td></tr>
-                <tr><td>13</td><td>Nov 10–16</td><td>Final Touch-Up / Wrap-Up</td><td></td><td></td></tr>
-            </tbody>
-        </table>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 UGA ICPC Club</p>
-    </footer>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calendar | UGA ICPC Club</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background: #f8f9fa;
+				margin: 0;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+			html {
+				height: 100%;
+			}
+			header {
+				background: #800000;
+				color: #fff;
+				padding: 1.5em 0;
+				text-align: left;
+				display: flex;
+				align-items: center;
+			}
+			.logo {
+				height: 48px;
+				vertical-align: middle;
+				margin-right: 1em;
+				display: inline-block;
+			}
+			h1 {
+				display: inline-block;
+				margin: 0;
+				font-size: 2em;
+				vertical-align: middle;
+				font-style: italic;
+			}
+			nav {
+				display: inline-block;
+				margin-left: 2em;
+				vertical-align: middle;
+			}
+			nav a {
+				color: #fff;
+				margin: 0 1em 0 0;
+				text-decoration: none;
+				font-weight: bold;
+				display: inline-block;
+				text-align: left;
+			}
+			nav a:hover {
+				text-decoration: underline;
+			}
+			main {
+				flex: 1 0 auto;
+				width: 100%;
+				display: block;
+			}
+			.main-content {
+				padding: 2em;
+				max-width: 700px;
+				margin: 2em auto;
+				background: #fff;
+				border-radius: 8px;
+				box-shadow: 0 2px 8px #0001;
+			}
+			.calendar-embed {
+				width: 100%;
+				min-height: 600px;
+				border: none;
+				margin-top: 1em;
+			}
+			footer {
+				background: #222;
+				color: #fff;
+				text-align: center;
+				padding: 1em 0;
+				margin-top: 2em;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 1em;
+			}
+			th,
+			td {
+				padding: 0.75em;
+				text-align: left;
+				border: 1px solid #ddd;
+			}
+			th {
+				background: #f4f4f4;
+			}
+			tr:hover {
+				background: #f1f1f1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<img
+					src="https://acm-uga.github.io/resources/social_img/csip.png"
+					alt="UGA ICPC Logo"
+					class="logo"
+				/>UGA ICPC Club
+			</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="workshops.html">Workshops</a>
+				<a href="contests.html">Contests</a>
+				<a href="leaderboard.html">Leaderboard</a>
+				<a href="calendar.html">Calendar</a>
+			</nav>
+		</header>
+		<main>
+			<div class="main-content">
+				<h2>Event Calendar</h2>
+				<div style="overflow-x: auto">
+					<table
+						style="
+							width: 100%;
+							border-collapse: collapse;
+							background: #fff;
+						"
+					>
+						<thead>
+							<tr style="background: #eee">
+								<th>Week</th>
+								<th>Date Range</th>
+								<th>Workshop Topic</th>
+								<th>Contest</th>
+								<th style="min-width: 120px">Links</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Aug 18–24</td>
+								<td>
+									🏁
+									<b
+										>Welcome + Mock Contest 0 (Kickoff
+										Practice)</b
+									><br />Short intro + 90-min ICPC-style
+									contest
+								</td>
+								<td>📌 Light editorial after</td>
+								<td>
+									<a href="content/week1/complexity.html"
+										>Time Complexity Notes</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Aug 25–31</td>
+								<td>
+									Brute Force + Simulation + Contest Review
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Sep 1–7</td>
+								<td>Arrays, Hash Maps, Sets</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Weekend</td>
+								<td>🏁 <b>Mock Contest 1</b></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Sep 8–14</td>
+								<td>Binary Search + Sorting</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Sep 15–21</td>
+								<td>Prefix Sums + Greedy</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Sep 22–28</td>
+								<td>Graphs I (BFS/DFS)</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Weekend</td>
+								<td>🏁 <b>Mock Contest 2</b></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Sep 29–Oct 5</td>
+								<td>Graphs II (Topo, Dijkstra, MST)</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Oct 6–12</td>
+								<td>Bitmask + Backtracking</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Oct 13–19</td>
+								<td>Dynamic Programming I</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Weekend</td>
+								<td>🏁 <b>Mock Contest 3</b></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Oct 20–26</td>
+								<td>Dynamic Programming II</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Oct 27–Nov 2</td>
+								<td>Contest Strategy + Codeforces Practice</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Nov 3–9</td>
+								<td>Regionals Practice Set</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Weekend</td>
+								<td>🏁 <b>Mock Contest 4</b></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>Nov 10–16</td>
+								<td>Final Touch-Up / Wrap-Up</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p>&copy; 2025 UGA ICPC Club</p>
+		</footer>
+	</body>
 </html>
