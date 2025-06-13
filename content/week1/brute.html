@@ -35,6 +35,9 @@
             };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
 </head>
 <body>
     <header>
@@ -56,13 +59,16 @@
     </footer>
     <script>
     fetch('brute.md')
-      .then(res => res.text())
-      .then(md => {
-        document.getElementById('md-content').innerHTML = marked.parse(md);
-        if (window.MathJax) {
-          MathJax.typesetPromise();
-        }
-      });
+        .then(res => res.text())
+        .then(md => {
+            document.getElementById('md-content').innerHTML = marked.parse(md);
+            if (window.hljs) {
+                document.querySelectorAll('pre code').forEach(block => hljs.highlightElement(block));
+            }
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        });
     </script>
 </body>
 </html>

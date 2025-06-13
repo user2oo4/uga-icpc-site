@@ -9,6 +9,45 @@
 
 ---
 
+## Depth First Search (DFS) and Breadth First Search (BFS)
+
+The interactive slides linked above are excellent for building intuition about DFS and BFS. The key difference is that DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving deeper. As a result, BFS visits vertices in order of their distance from the source.
+
+For implementation, DFS is most naturally written recursively: you keep visiting unvisited nodes as you go deeper, forming a DFS tree that records the order of traversal. This is especially useful for problems on trees (connected graphs with $n$ vertices and $n-1$ edges). Here is a typical DFS implementation:
+
+```cpp
+void dfs(int v) {
+    visited[v] = 1; // mark v as visited
+    for (int u: AdjList[v]) {
+        if (!visited[u]) {
+            dfs(u);
+        }
+    }
+}
+```
+
+BFS, on the other hand, uses a queue to ensure nodes are visited in order of increasing distance from the source. This makes BFS ideal for finding shortest paths in unweighted graphs, since the first time you reach a node, you have found the shortest path to it. Here is a standard BFS implementation:
+
+```cpp
+void bfs(int s) {
+    visited[s] = 1;
+    dist[s] = 0; // distance to source
+    queue<int> q;
+    q.push(s);
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (int v: AdjList[u]) {
+            if (!visited[v]) {
+                visited[v] = 1;
+                dist[v] = dist[u] + 1; // update distance
+                q.push(v);
+            }
+        }
+    }
+}
+```
+
 ## Example Problem 1: [CSES - Building Roads](https://cses.fi/problemset/task/1666)
 
 Find the minimum number of roads needed to connect all cities. This is a classic connected components problem.
