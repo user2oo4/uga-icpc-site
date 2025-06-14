@@ -1,7 +1,6 @@
 # Binary Search
 
-Binary search is a method to efficiently find a value that satisfies a condition by testing the middle of the search range, and narrowing the range by half each iteration. Because we effectively divide the search space by 2 every step, the runtime of binary search is merely $O(\log N)$.
-
+Binary search is a method to efficiently find a value that satisfies a condition by repeatedly testing the middle of the search range, and narrowing the range by half each iteration. At each step, the checking the middle tells us valuable information about which side the answer lies. Because we divide the search space by 2 every step, the runtime of binary search is only $O(\log N)$.
 ---
 
 ## How fast is $\log N$?
