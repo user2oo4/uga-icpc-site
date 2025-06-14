@@ -10,7 +10,7 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 |---------------------------------------|:-------:|:--------:|:----------:|
 | Week 1: Time Complexity               | 🟩      | ⬜       | ⬜         |
 | Week 2: Brute Force + Simulation + Contest Review | 🟩      | 🟨       | 🟥         |
-| Week 3: Arrays, Hash Maps, Sets       | 🟥      | 🟥       | 🟥         |
+| Week 3: Arrays, Hash Maps, Sets       | 🟩      | 🟥       | 🟥         |
 | Week 4: Binary Search + Sorting       | 🟥      | 🟥       | 🟥         |
 | Week 5: Prefix Sums + Greedy          | 🟥      | 🟥       | 🟥         |
 | Week 6: Graphs I (BFS/DFS)            | 🟩      | 🟥       | 🟥         |
