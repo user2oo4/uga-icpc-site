@@ -9,7 +9,7 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 | Topic                                 | Article | Problems | Editorials |
 |---------------------------------------|:-------:|:--------:|:----------:|
 | Week 1: Intro + Time Complexity + Intro Contest | 🟩      | ⬜       | ⬜         |
-| Week 2: Brute Force                   | 🟩      | 🟨       | 🟥         |
+| Week 2: Brute Force + Set/Map (optional)    | 🟩      | 🟨       | 🟥         |
 | Week 3: Greedy Problems               | 🟥      | 🟥       | 🟥         |
 | Week 4: Graph (DFS, BFS, Shortest Path)| 🟨     | 🟥       | 🟥         |
 | Week 5: DP 1 (Basic 1D + Table DP)    | 🟥      | 🟥       | 🟥         |
