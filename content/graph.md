@@ -211,9 +211,131 @@ int main() {
 ```
 </details>
 
+## Shortest Path Problems
+
+### Unweighted Graphs
+
+- Use **BFS** for shortest paths in unweighted graphs.
+- BFS maintains the order of distances using a queue: all nodes at distance $d$ are processed before any at $d+1$.
+- If edges have weights 0 or 1, use a **deque**: push nodes to the front if traversing a 0-weight edge, to the back for a 1-weight edge (see 0-1 BFS below).
+- For multiple sources, initialize the queue with all sources; BFS still works since the order of distances is preserved.
+- Complexity: $O(n + m)$
+
+#### 0-1 BFS Example (C++)
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxN = 1e5 + 5;
+vector<pair<int, int>> AdjList[maxN]; // (neighbor, edge weight 0 or 1)
+int dist[maxN];
+
+void zero_one_bfs(int s, int n) {
+    deque<int> dq;
+    fill(dist, dist + n + 1, INT_MAX);
+    dist[s] = 0;
+    dq.push_front(s);
+    while (!dq.empty()) {
+        int u = dq.front(); dq.pop_front();
+        for (auto [v, w] : AdjList[u]) {
+            if (dist[v] > dist[u] + w) {
+                dist[v] = dist[u] + w;
+                if (w == 0) dq.push_front(v);
+                else dq.push_back(v);
+            }
+        }
+    }
+}
+```
+
 ---
 
-> **Extra Practice:**
-> - [CSES - Labyrinth (commented out)](https://cses.fi/problemset/task/1193)
+### Weighted Graphs (Positive Weights)
+
+- Use **Dijkstra's Algorithm** for shortest paths when all edge weights are positive.
+- Dijkstra uses a priority queue to always expand the node with the smallest current distance.
+- Always check if the current distance is better before updating.
+- Complexity: $O((n + m) \log n)$
+
+#### Dijkstra Example (C++)
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxN = 1e5 + 5;
+vector<pair<int, int>> AdjList[maxN]; // (neighbor, weight)
+int dist[maxN];
+
+void dijkstra(int s, int n) {
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    fill(dist, dist + n + 1, INT_MAX);
+    dist[s] = 0;
+    pq.push({0, s});
+    while (!pq.empty()) {
+        auto [d, u] = pq.top(); pq.pop();
+        if (d > dist[u]) continue;
+        for (auto [v, w] : AdjList[u]) {
+            if (dist[v] > dist[u] + w) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+}
+```
 
 ---
+
+### Negative Weights & All-Pairs
+
+- If there are **negative edge weights** (but no negative cycles), use **Bellman-Ford** ($O(nm)$):
+    - Repeatedly relax all edges up to $n-1$ times.
+    - Can detect negative cycles if a distance improves on the $n$-th iteration.
+- For **all-pairs shortest paths**, use **Floyd-Warshall** ($O(n^3)$):
+    - Handles negative weights (no negative cycles).
+    - See: [Floyd-Warshall Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Floyd–Warshall_algorithm)
+
+#### Bellman-Ford Example (C++)
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxN = 1e5 + 5;
+vector<tuple<int, int, int>> edges; // (u, v, weight)
+int dist[maxN];
+
+void bellman_ford(int s, int n) {
+    fill(dist, dist + n + 1, INT_MAX);
+    dist[s] = 0;
+    for (int i = 1; i <= n - 1; ++i) {
+        for (auto [u, v, w] : edges) {
+            if (dist[u] != INT_MAX && dist[v] > dist[u] + w) {
+                dist[v] = dist[u] + w;
+            }
+        }
+    }
+    // Optional: check for negative cycles
+    for (auto [u, v, w] : edges) {
+        if (dist[u] != INT_MAX && dist[v] > dist[u] + w) {
+            cout << "Negative cycle detected!\n";
+        }
+    }
+}
+```
+
+---
+
+**Summary Table:**
+
+| Graph Type                | Algorithm         | Complexity      |
+|--------------------------|-------------------|-----------------|
+| Unweighted                | BFS               | $O(n + m)$      |
+| 0/1 Weights               | 0-1 BFS (deque)   | $O(n + m)$      |
+| Positive Weights          | Dijkstra          | $O((n+m)\log n)$|
+| Negative Weights          | Bellman-Ford      | $O(nm)$         |
+| All-Pairs (no neg. cycle) | Floyd-Warshall    | $O(n^3)$        |
+
+For more, see [CP-Algorithms: Shortest Paths](https://cp-algorithms.com/graph/shortest_path.html).
