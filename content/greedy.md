@@ -1,5 +1,7 @@
 # Greedy Algorithms
 
+<img src="https://p19-common-sign-sg.tiktokcdn-us.com/tos-alisg-p-0037/oUBCA5mDuiAADCHAE0iBwVfWIAGrwKMYAKYo8I~tplv-tiktokx-origin.image?dr=9636&x-expires=1750078800&x-signature=sjBC9Tzq7guWcXu41p3nEPiUDM0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=55bbe6a9&idc=useast8" alt="Greedy meme" width="180" style="float:right; margin-left:1em; margin-bottom:1em;" />
+
 Greedy algorithms build a solution step by step, always choosing the option that seems best at the moment—according to some value or priority function. The challenge is to find the right value function and to prove that making locally optimal choices leads to a globally optimal solution. This is often done by logical reasoning or by providing a counterexample if the greedy approach fails.
 
 Let's explore some classic greedy problems and see how to reason about their correctness.
