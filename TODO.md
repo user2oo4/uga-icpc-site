@@ -16,7 +16,7 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 | Week 6: Binary Search                 | 🟩      | 🟥       | 🟥         |
 | Week 7: Prefix Sums + Sliding Windows | 🟥      | 🟥       | 🟥         |
 | Week 8: DP 2                          | 🟥      | 🟥       | 🟥         |
-| Week 9: DP on Tree                    | 🟥      | 🟥       | 🟥         |
+| Week 9: DP on Tree                    | 🟩      | 🟥       | 🟥         |
 | Week 10: DSU, MST                     | 🟥      | 🟥       | 🟥         |
 | Week 11: Counting + Combinatorics     | 🟥      | 🟥       | 🟥         |
 | Week 12: Constructive Problems + Contest Strategies | 🟥 | 🟥   | 🟥         |
