@@ -12,7 +12,7 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 | Week 2: Brute Force + Set/Map (optional)    | 🟩      | 🟨       | 🟥         |
 | Week 3: Greedy Problems               | 🟩      | 🟥       | 🟥         |
 | Week 4: Graph (DFS, BFS, Shortest Path)| 🟩     | 🟥       | 🟥         |
-| Week 5: DP 1 (Basic 1D + Table DP)    | 🟥      | 🟥       | 🟥         |
+| Week 5: DP 1 (Basic 1D + Table DP)    | 🟩      | 🟥       | 🟥         |
 | Week 6: Binary Search                 | 🟩      | 🟥       | 🟥         |
 | Week 7: Prefix Sums + Sliding Windows | 🟥      | 🟥       | 🟥         |
 | Week 8: DP 2                          | 🟥      | 🟥       | 🟥         |
