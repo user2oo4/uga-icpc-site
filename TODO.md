@@ -8,19 +8,18 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 
 | Topic                                 | Article | Problems | Editorials |
 |---------------------------------------|:-------:|:--------:|:----------:|
-| Week 1: Time Complexity               | 🟩      | ⬜       | ⬜         |
-| Week 2: Brute Force + Simulation + Contest Review | 🟩      | 🟨       | 🟥         |
-| Week 3: Arrays, Hash Maps, Sets       | 🟩      | 🟥       | 🟥         |
-| Week 4: Binary Search + Sorting       | 🟥      | 🟥       | 🟥         |
-| Week 5: Prefix Sums + Greedy          | 🟥      | 🟥       | 🟥         |
-| Week 6: Graphs I (BFS/DFS)            | 🟩      | 🟥       | 🟥         |
-| Week 7: Graphs II (Topo, Dijkstra, MST)| 🟥     | 🟥       | 🟥         |
-| Week 8: Bitmask + Backtracking        | 🟥      | 🟥       | 🟥         |
-| Week 9: Dynamic Programming I         | 🟥      | 🟥       | 🟥         |
-| Week 10: Dynamic Programming II       | 🟥      | 🟥       | 🟥         |
-| Week 11: Contest Strategy + Codeforces Practice | 🟥 | 🟥   | ⬜         |
-| Week 12: Regionals Practice Set       | ⬜      | 🟥       | 🟥         |
-| Week 13: Final Touch-Up / Wrap-Up     | ⬜      | 🟥       | 🟥         |
+| Week 1: Intro + Time Complexity + Intro Contest | 🟩      | ⬜       | ⬜         |
+| Week 2: Brute Force                   | 🟩      | 🟨       | 🟥         |
+| Week 3: Greedy Problems               | 🟥      | 🟥       | 🟥         |
+| Week 4: Graph (DFS, BFS, Shortest Path)| 🟨     | 🟥       | 🟥         |
+| Week 5: DP 1 (Basic 1D + Table DP)    | 🟥      | 🟥       | 🟥         |
+| Week 6: Binary Search                 | 🟩      | 🟥       | 🟥         |
+| Week 7: Prefix Sums + Sliding Windows | 🟥      | 🟥       | 🟥         |
+| Week 8: DP 2                          | 🟥      | 🟥       | 🟥         |
+| Week 9: DP on Tree                    | 🟥      | 🟥       | 🟥         |
+| Week 10: DSU, MST                     | 🟥      | 🟥       | 🟥         |
+| Week 11: Counting + Combinatorics     | 🟥      | 🟥       | 🟥         |
+| Week 12: Constructive Problems + Contest Strategies | 🟥 | 🟥   | 🟥         |
 
 ---
 
@@ -28,8 +27,9 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 
 | Contest                        | Problems | Editorials |
 |--------------------------------|:--------:|:----------:|
-| Mock Contest 0 (Kickoff Practice) | 🟩      | 🟨         |
+| Intro Contest                  | 🟥       | 🟥         |
 | Mock Contest 1                 | 🟥       | 🟥         |
 | Mock Contest 2                 | 🟥       | 🟥         |
-| Mock Contest 3                 | 🟥       | 🟥         |
+| Mock Contest 3 (NAQ)           | 🟥       | 🟥         |
 | Mock Contest 4                 | 🟥       | 🟥         |
+| Final Mock Contest             | 🟥       | 🟥         |
