@@ -1,6 +1,7 @@
 # Binary Search
 
 Binary search is a method to efficiently find a value that satisfies a condition by repeatedly testing the middle of the search range, and narrowing the range by half each iteration. At each step, the checking the middle tells us valuable information about which side the answer lies. Because we divide the search space by 2 every step, the runtime of binary search is only $O(\log N)$.
+
 ---
 
 ## How fast is $\log N$?
@@ -158,4 +159,4 @@ The graph of the check function over the search space looks something like this:
 ![alt text](image-1.png)
 
 > **Think:**
-> Why do we do $r = \text{mid}$ when we can make $t$ items, but $l = \text{mid} + 1$ when we can't?
+> Why do we do $r = \tex$$t{mid}$ when we can make $t$ items, but $l = \text{mid} + 1$ when we can't?
