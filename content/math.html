@@ -1,0 +1,28 @@
+<!-- Math HTML Renderer -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../marked.min.js"></script>
+    <script src="../highlight.min.js"></script>
+    <script src="../mathjax.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="content">
+        <div id="markdown-content"></div>
+    </div>
+    <script src="../navbar.js"></script>
+    <script>
+        fetch('math.md')
+            .then(response => response.text())
+            .then(md => {
+                document.getElementById('markdown-content').innerHTML = marked.parse(md);
+                MathJax.typesetPromise();
+                document.querySelectorAll('pre code').forEach((block) => { hljs.highlightBlock(block); });
+            });
+    </script>
+</body>
+</html>
