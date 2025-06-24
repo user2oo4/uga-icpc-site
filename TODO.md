@@ -15,11 +15,11 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 | Week 5: DP 1 (Basic 1D + Table DP)    | 🟩      | 🟩       | 🟥         |
 | Week 6: Binary Search                 | 🟩      | 🟥       | 🟥         |
 | Week 7: Prefix Sums                   | 🟩      | 🟥       | 🟥         |
-| Week 8: 2 pointers, sliding window    | 🟥      | 🟥       | 🟥         |
+| Week 8: 2 pointers, sliding window    | 🟩      | 🟥       | 🟥         |
 | Week 9: DP on Tree + More DP Practice | 🟩      | 🟥       | 🟥         |
 | Week 10: DSU, MST                     | 🟩      | 🟥       | 🟥         |
 | Week 11: Math                         | 🟨      | 🟥       | 🟥         |
-| Week 12: Constructive Problems + Contest Strategies | 🟥 | 🟥   | 🟥         |
+| Week 12: Constructive + Strategies    | 🟥      | 🟥       | 🟥         |
 
 ---
 
