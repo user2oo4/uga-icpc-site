@@ -18,7 +18,7 @@ Status legend: 🟥 Not started | 🟨 In progress | 🟩 Done | ⬜ N/A
 | Week 8: 2 pointers, sliding window    | 🟩      | 🟥       | 🟥         |
 | Week 9: DP on Tree + More DP Practice | 🟩      | 🟥       | 🟥         |
 | Week 10: DSU, MST                     | 🟩      | 🟥       | 🟥         |
-| Week 11: Math                         | 🟨      | 🟥       | 🟥         |
+| Week 11: Math                         | 🟩      | 🟥       | 🟥         |
 | Week 12: Constructive + Strategies    | 🟥      | 🟥       | 🟥         |
 
 ---
