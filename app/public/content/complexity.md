@@ -1,3 +1,4 @@
+
 # Time Complexity in Competitive Programming
 
 Understanding time complexity is crucial in competitive programming because it helps you determine whether your solution will run efficiently within the given constraints. Efficient algorithms can be the difference between passing all test cases and getting a time limit exceeded (TLE) error.
@@ -9,7 +10,8 @@ A conservative estimate for the number of operations the grading server can hand
 - [Wikipedia: Big O notation](https://en.wikipedia.org/wiki/Big_O_notation)
 - [Youtube: Introduction to Big O](https://www.youtube.com/watch?v=zUUkiEllHG0)
 
-## Some examples
+
+## Some Examples
 
 ### $O(1)$
 ```cpp
@@ -190,21 +192,19 @@ Here are conservative upper bounds on the value of $n$ for each time complexity.
 You might get away with more than this, but this should allow you to quickly
 check whether an algorithm is viable.
 
-<center>
 
 | $n$                  | Possible complexities                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| $n \le 10$           | $\mathcal{O}(n!)$, $\mathcal{O}(n^7)$, $\mathcal{O}(n^6)$        |
-| $n \le 20$           | $\mathcal{O}(2^n \cdot n)$, $\mathcal{O}(n^5)$                   |
-| $n \le 80$           | $\mathcal{O}(n^4)$                                               |
-| $n \le 400$          | $\mathcal{O}(n^3)$                                               |
-| $n \le 7500$         | $\mathcal{O}(n^2)$                                               |
-| $n \le 7 \cdot 10^4$ | $\mathcal{O}(n \sqrt n)$                                         |
-| $n \le 5 \cdot 10^5$ | $\mathcal{O}(n \log n)$                                          |
-| $n \le 5 \cdot 10^6$ | $\mathcal{O}(n)$                                                 |
-| $n \le 10^{18}$      | $\mathcal{O}(\log^2 n)$, $\mathcal{O}(\log n)$, $\mathcal{O}(1)$ |
+| $n \le 10$           | $\\mathcal{O}(n!)$, $\\mathcal{O}(n^7)$, $\\mathcal{O}(n^6)$        |
+| $n \le 20$           | $\\mathcal{O}(2^n \\cdot n)$, $\\mathcal{O}(n^5)$                   |
+| $n \le 80$           | $\\mathcal{O}(n^4)$                                               |
+| $n \le 400$          | $\\mathcal{O}(n^3)$                                               |
+| $n \le 7500$         | $\\mathcal{O}(n^2)$                                               |
+| $n \le 7 \\cdot 10^4$ | $\\mathcal{O}(n \\sqrt n)$                                         |
+| $n \le 5 \\cdot 10^5$ | $\\mathcal{O}(n \\log n)$                                          |
+| $n \le 5 \\cdot 10^6$ | $\\mathcal{O}(n)$                                                 |
+| $n \le 10^{18}$      | $\\mathcal{O}(\\log^2 n)$, $\\mathcal{O}(\\log n)$, $\\mathcal{O}(1)$ |
 
-</center>
 
 ## Constant Factor
 

@@ -1,3 +1,4 @@
+
 # Prefix Sums
 
 ## Resources
@@ -14,9 +15,11 @@ p_0 = 0 \\
 p_i = a_1 + a_2 + \dots + a_i \text{ for } 1 \leq i \leq n
 $$
 
+
 This allows you to compute the sum of $a[l]$ through $a[r]$ as $p_r - p_{l-1}$ (using 1-based indexing).
 
 ---
+
 
 ## Prefix Sum Code (C++)
 
@@ -38,6 +41,7 @@ int get_sum(int l, int r) {
 }
 ```
 ---
+
 
 ## Example Problem 1: [CSES - Maximum Subarray Sum](https://cses.fi/problemset/task/1643)
 

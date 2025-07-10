@@ -1,3 +1,4 @@
+
 # Simulation and Complete Search
 
 These problems are a great starting point for practicing careful attention to problem constraints. If a direct simulation or brute force approach is efficient enough for the given limits, it's often the best and simplest solution.
@@ -29,7 +30,7 @@ We can simulate the process. Store an array that keeps track of which shell is a
 #include <bits/stdc++.h>
 using namespace std;
 
-// stores the shell located at position i 
+// stores the shell located at position i
 // shell i starts at position i
 int shell[4];
 // stores number of times shell i was picked
@@ -160,10 +161,10 @@ int n;
 ll weights[25];
 
 int main() {
-	cin >> n;
+    cin >> n;
 
     ll ans = 0;
-	for (int i = 0 ; i < n ; i++) { 
+    for (int i = 0 ; i < n ; i++) { 
         cin >> weights[i];
         ans += weights[i]; 
     }

@@ -1,8 +1,10 @@
+
 # Math
 
 ## Modular Arithmetic
 
 Modular arithmetic is a system of arithmetic for integers, where numbers "wrap around" after reaching a certain value—the modulus. It is fundamental in competitive programming, especially for problems involving large numbers, combinatorics, or cryptography.
+
 
 ### Binary Exponentiation
 
@@ -23,6 +25,7 @@ ll binpow(ll a, ll b, ll m) {
 }
 ```
 
+
 ### Modular Inverse (Fermat's Little Theorem)
 
 The modular inverse of $a$ modulo $m$ is a number $x$ such that $a \cdot x \equiv 1 \pmod{m}$. If $m$ is prime, the inverse is $a^{m-2} \bmod m$ (by Fermat's Little Theorem):
@@ -34,13 +37,14 @@ ll modinv(ll a, ll m) {
 }
 
 ll moddiv(ll a, ll b, ll m) {
-    return a * modinv(b, m) % mod; // (a / b) mod m
+    return a * modinv(b, m) % m; // (a / b) mod m
 }
 ```
 
 - For non-prime $m$, use the extended Euclidean algorithm.
 
 ---
+
 
 ## Further Reading
 - [CP-Algorithms: Modular Arithmetic](https://cp-algorithms.com/algebra/module-inverse.html)

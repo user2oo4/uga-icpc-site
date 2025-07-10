@@ -1,25 +1,23 @@
+bool binarySearch(int target) {
+
 # Binary Search
 
-Binary search is a method to efficiently find a value that satisfies a condition by repeatedly testing the middle of the search range, and narrowing the range by half each iteration. At each step, the checking the middle tells us valuable information about which side the answer lies. Because we divide the search space by 2 every step, the runtime of binary search is only $O(\log N)$.
+Binary search is a method to efficiently find a value that satisfies a condition by repeatedly testing the middle of the search range, and narrowing the range by half each iteration. At each step, checking the middle tells us valuable information about which side the answer lies. Because we divide the search space by 2 every step, the runtime of binary search is only $O(\log N)$.
 
 ---
 
 ## How fast is $\log N$?
 
-* Say our search space was 1 to **1 billion** ($10^9$).
-  Binary search would give us a result in $\leq 30$ operations (since $\log_2(10^9) \approx 30$).
-
-* Say our search space was 1 to **1 quintillion (1 billion billion, $10^{18}$)**.
-  Binary search would give us a result in $\leq 60$ operations (since $\log_2(10^{18}) \approx 60$).
+- Say our search space was 1 to **1 billion** ($10^9$). Binary search would give us a result in $\leq 30$ operations (since $\log_2(10^9) \approx 30$).
+- Say our search space was 1 to **1 quintillion (1 billion billion, $10^{18}$)**. Binary search would give us a result in $\leq 60$ operations (since $\log_2(10^{18}) \approx 60$).
 
 > Imagine if we had to do complete search $O(N)$ over that space!
 
 ---
 
-# The Classic Example
+## The Classic Example
 
-Assume we had a sorted array with $N$ numbers anywhere from 1 to 1 billion.
-How can we efficiently check if a number exists in the array?
+Assume we had a sorted array with $N$ numbers anywhere from 1 to 1 billion. How can we efficiently check if a number exists in the array?
 
 While going through every element would take $O(N)$ time, we can accomplish this in $O(\log N)$ time with binary search.
 
@@ -27,11 +25,9 @@ While going through every element would take $O(N)$ time, we can accomplish this
 int arr[N];
 
 bool binarySearch(int target) {
-    int left = 0, right = N - 1; 
-
+    int left = 0, right = N - 1;
     while (left <= right) {
         int mid = (right + left) / 2;
-
         if (arr[mid] == target) {
             return true;
         } else if (arr[mid] < target) {
@@ -40,7 +36,6 @@ bool binarySearch(int target) {
             right = mid - 1;
         }
     }
-
     return false;
 }
 ```
@@ -49,13 +44,12 @@ bool binarySearch(int target) {
 
 ## Why does this work?
 
-We are trying to find if $\text{target}$ is in our array.
-Our search space starts from index $0$ to $N - 1$.
+We are trying to find if $\text{target}$ is in our array. Our search space starts from index $0$ to $N - 1$.
 
 Now, we check the middle index:
 
-* If $\text{arr[mid]} < \text{target}$, we know that $\text{target}$ must be somewhere **after** $\text{mid}$. So we set $\text{left} = \text{mid} + 1$.
-* If $\text{arr[mid]} > \text{target}$, we know that $\text{target}$ must be **before** $\text{mid}$. So we set $\text{right} = \text{mid} - 1$.
+- If $\text{arr[mid]} < \text{target}$, we know that $\text{target}$ must be somewhere **after** $\text{mid}$. So we set $\text{left} = \text{mid} + 1$.
+- If $\text{arr[mid]} > \text{target}$, we know that $\text{target}$ must be **before** $\text{mid}$. So we set $\text{right} = \text{mid} - 1$.
 
 By doing this, we are cutting our search space in half at each iteration.
 

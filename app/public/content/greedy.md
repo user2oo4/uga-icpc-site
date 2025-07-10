@@ -1,8 +1,7 @@
 # Greedy Algorithms
 
-<img src="../img/mrgriddy.jpeg" alt="Greedy mr" width="180" style="float:right; margin-left:1em; margin-bottom:1em;" />
 
-<!-- ![mr greedy](../img/mrgriddy.jpeg) -->
+![Greedy mr](/img/mrgriddy.jpeg)
 
 Greedy algorithms build a solution step by step, always choosing the option that seems best at the moment—according to some value or priority function. The challenge is to find the right value function and to prove that making locally optimal choices leads to a globally optimal solution. This is often done by logical reasoning or by providing a counterexample if the greedy approach fails.
 
@@ -15,6 +14,7 @@ Let's explore some classic greedy problems and see how to reason about their cor
 **Problem:** Given a list of events (start and end times), attend as many as possible without overlap.
 
 A common mistake is to always pick the next event with the earliest start time. This can lead to missing out on shorter events that allow you to attend more overall. Instead, the optimal greedy strategy is to always pick the event with the earliest finish time that doesn't overlap with your current schedule.
+
 
 **Why does this work?**
 - By picking the event that ends earliest, you leave as much room as possible for future events.
@@ -47,6 +47,7 @@ int main() {
 ## Example 2: [CSES - Tasks and Deadlines](https://cses.fi/problemset/task/1630)
 
 **Problem:** Given $n$ tasks, each with a duration and a deadline, schedule all tasks (in any order) to maximize the total reward, where the reward for a task is $(\text{deadline} - \text{finish time})$ (can be negative).
+
 
 **Solution:**
 - The total reward is maximized by finishing shorter tasks first. This is because each task's duration is subtracted from the reward of all subsequent tasks.
@@ -95,6 +96,7 @@ int main() {
 Not every problem can be solved greedily. For example:
 - **Coin Change:** Greedy works for standard coin systems (like US currency), but fails for arbitrary denominations. For coins [1, 3, 7, 8], to make 10, greedy gives 8+1+1, but 7+3 is better.
 - **Knapsack:** The classic 0/1 knapsack problem is not greedy; it requires dynamic programming.
+
 
 **How to tell?**
 - Try to prove your greedy choice is always safe (exchange argument, induction, etc.).

@@ -1,3 +1,4 @@
+
 # Introduction to Graphs & Graph Traversal
 
 ## Resources
@@ -177,36 +178,36 @@ string building[maxN];
 bool visited[maxN][maxN];
 
 void floodfill(int r, int c) {
-	queue<pair<int, int>> q;
-	q.push({r, c});
-	while (!q.empty()) {
-		r = q.front().first;
-		c = q.front().second;
-		q.pop();
+    queue<pair<int, int>> q;
+    q.push({r, c});
+    while (!q.empty()) {
+        r = q.front().first;
+        c = q.front().second;
+        q.pop();
 
-		if (r < 0 || r >= row_num || c < 0 || c >= col_num || building[r][c] == '#' || visited[r][c]) continue;
+        if (r < 0 || r >= row_num || c < 0 || c >= col_num || building[r][c] == '#' || visited[r][c]) continue;
 
-		visited[r][c] = true;
-		for (int i = 0; i < 4; i++) {
-			q.push({r + R_CHANGE[i], c + C_CHANGE[i]});
-		}
-	}
+        visited[r][c] = true;
+        for (int i = 0; i < 4; i++) {
+            q.push({r + R_CHANGE[i], c + C_CHANGE[i]});
+        }
+    }
 }
 
 int main() {
-	cin >> row_num >> col_num;
-	for (int i = 0; i < row_num; i++) { cin >> building[i]; }
+    cin >> row_num >> col_num;
+    for (int i = 0; i < row_num; i++) { cin >> building[i]; }
 
-	int room_num = 0;
-	for (int i = 0; i < row_num; i++) {
-		for (int j = 0; j < col_num; j++) {
-			if (building[i][j] == '.' && !visited[i][j]) {
-				floodfill(i, j);
-				room_num++;
-			}
-		}
-	}
-	cout << room_num << endl;
+    int room_num = 0;
+    for (int i = 0; i < row_num; i++) {
+        for (int j = 0; j < col_num; j++) {
+            if (building[i][j] == '.' && !visited[i][j]) {
+                floodfill(i, j);
+                room_num++;
+            }
+        }
+    }
+    cout << room_num << endl;
 }
 ```
 </details>

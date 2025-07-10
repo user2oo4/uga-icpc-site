@@ -1,3 +1,10 @@
+/* Ensure markdown tables are always readable */
+.markdown-body table,
+.markdown-body th,
+.markdown-body td {
+  background: #fff !important;
+  color: #222 !important;
+}
 body {
   font-family: Arial, sans-serif;
   background: #f8f9fa;
